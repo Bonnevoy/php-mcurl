@@ -16,7 +16,7 @@ A quick example how to use php-mcurl:
     $responses = $mcurl->get_content();
     echo $responses[0]['content']; // Print response from first URL
 
-2 URLs are get in this example with the first one starting at t0 and the second at t1 (max connections per second = 1)
+2 URLs are fetched in this example with the first one starting at t0 and the second at t1 (max connections per second = 1)
 
 ## Example
 The example scripts are currently online at http://experiments.bonnevoy.com/mcurl/example/client.php
