@@ -4,3 +4,16 @@ For example you want to make 50 requests, which all take 5 seconds, but you only
 
 ## Requirements
 The class is written in PHP5 and uses the [curl_multi_init()](http://php.net/curl_multi_init) function.
+
+## Usage
+A quick example how to use php-mcurl:
+
+    $mcurl = Mcurl::factory();
+    $mcurl->max_per_second = 1;
+    $mcurl->add_url('http://example.com/foo');
+    $mcurl->add_url('http://example.com/bar');
+    $mcurl->execute();
+    $responses = $mcurl->get_content();
+    echo $responses[0]['content']; // Print response from first URL
+
+2 URLs are get in this example with the first one starting at t0 and the second at t1 (max connections per second = 1)s
